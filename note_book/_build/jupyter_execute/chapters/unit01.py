@@ -228,15 +228,3 @@ text5 = alt.Chart({'values':[{'x': 5, 'y': 6}]}).mark_text(
 
 (df1 + df1_ppc2 + text3 + text4 + text5).properties(title='Production Possibilities Curve')
 
-
-# ## Marginal analysis
-# 
-# Marginal analysis
-# : Study of the costs and benefits of doing one unit more of an activity versus one unit less.
-
-# [x] Scarcity<br>
-# [x] Resource allocation and economic systems<br>
-# [ ] The Production Possibilities Curve<br>
-# [ ] Comparative advantage and gains from trade<br>
-# [ ] Cost-benefit analysis<br>
-# [ ] Marginal analysis and consumer choice<br>
