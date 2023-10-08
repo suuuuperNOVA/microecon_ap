@@ -149,7 +149,7 @@ df_ppc = pd.DataFrame({'point': ['A', 'B', 'C', 'D', 'E'],
                    'pizza': [0, 1, 2, 3, 4],
                    'apple': [10, 9, 7, 4, 0]
                   })
-df1 = alt.Chart(df_ppc).mark_line(point=alt.OverlayMarkDef(filled=False, fill="white")).encode(
+df1 = alt.Chart(df_ppc).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
     alt.X('pizza', title='Quantity of Pizza', scale=alt.Scale(domain=[0,5]), axis=alt.Axis(tickCount=6)),
     alt.Y('apple', title='Quantity of Apple', scale=alt.Scale(domain=[0,11]), axis=alt.Axis(tickCount=12)),
 )
@@ -201,28 +201,28 @@ text2 = alt.Chart({'values':[{'x': 2, 'y': 3}]}).mark_text(
 # In[2]:
 
 
-df_ppc2 = pd.DataFrame({'point': ['A', 'B', 'C', 'D', 'E'],
-                   'pizza': [0, 2, 3, 4, 6],
-                   'apple': [12, 11, 9, 6, 0]
+df_ppc2 = pd.DataFrame({'point': ['A', 'B', 'C', 'D', 'E', 'F'],
+                   'pizza': [0, 1, 2, 3, 4, 5],
+                   'apple': [15, 14, 12, 9, 5, 0]
                   })
 
-df1_ppc2 = alt.Chart(df_ppc2).mark_line(point=alt.OverlayMarkDef(filled=False, fill="white"), color='green').encode(
-    alt.X('pizza', title='Quantity of Pizza', scale=alt.Scale(domain=[0,7]), axis=alt.Axis(tickCount=6)),
-    alt.Y('apple', title='Quantity of Apple', scale=alt.Scale(domain=[0,13]), axis=alt.Axis(tickCount=12)),
+df1_ppc2 = alt.Chart(df_ppc2).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white', color='green'), color='green').encode(
+    alt.X('pizza', title='Quantity of Pizza', scale=alt.Scale(domain=[0,5]), axis=alt.Axis(tickCount=6)),
+    alt.Y('apple', title='Quantity of Apple', scale=alt.Scale(domain=[0,15]), axis=alt.Axis(tickCount=12)),
 )
 
-text3 = alt.Chart({'values':[{'x': 3, 'y': 6}]}).mark_text(
-    text='------>',
+text3 = alt.Chart({'values':[{'x': 2.3, 'y': 9}]}).mark_text(
+    text='➟',
+    fontSize=50
+).encode(x='x:Q', y='y:Q')
+
+text4 = alt.Chart({'values':[{'x': 1.4, 'y': 9.2}]}).mark_text(
+    text='PPC_0',
     fontSize=15
 ).encode(x='x:Q', y='y:Q')
 
-text4 = alt.Chart({'values':[{'x': 1.6, 'y': 6}]}).mark_text(
-    text='PPC',
-    fontSize=15
-).encode(x='x:Q', y='y:Q')
-
-text5 = alt.Chart({'values':[{'x': 5, 'y': 6}]}).mark_text(
-    text='New PPC',
+text5 = alt.Chart({'values':[{'x': 3.5, 'y': 9.2}]}).mark_text(
+    text=r'PPC_new',
     fontSize=15
 ).encode(x='x:Q', y='y:Q')
 
