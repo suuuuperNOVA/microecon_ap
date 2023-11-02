@@ -352,12 +352,11 @@ alt.hconcat(fig1, fig2)
 # ## Supply
 # 
 # Supply
-# : The different quantities of a good that sellers are willing and able to sell or produce at different prices.
-# 
+# : The different quantities of a good that sellers are willing and able to sell or produce at different prices.<br><br>
 # 
 # Supply schedule
 # : Shows how much of a good or service producers would supply at different prices.
-# : The table below shows Supply Schedule for Cotton.<br>
+# : The table below shows Supply Schedule for Cotton.<br><br>
 # 
 # |Price of cotton<br>(\$ per pound)|Quantity of cotton supplied<br>(billions of pounds)|
 # |---|---|
@@ -373,8 +372,7 @@ alt.hconcat(fig1, fig2)
 # Quantity supplied
 # : Actual amount of a good or service people are willing to sell at some specific price.
 # : It is shown as a single point in a supply schedule or along a supply curve.
-# : When cotton is $1.75 per pound, the quantity supplied is 11.5 billion pounds.
-# 
+# : When cotton is $1.75 per pound, the quantity supplied is 11.5 billion pounds.<br><br>
 # 
 # Supply curve
 # : Graphical representation of the supply schedule. It shows the relationship between quantity supplied and price (the figure below).
