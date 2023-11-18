@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02.1: Demand
+# # Demand
 # 
 # Demand
 # : The different quantities of goods that consumers are **willing** and **able** to buy at different prices.<br><br>
@@ -160,7 +160,7 @@ fig2+text1+text2+text3+text4+text5
 # - When the demand increases, the demand curve shifts outward or to the right.
 # - When the demand decreases, the demand curve shifts inward or to the left.
 # 
-# 
+# (content:references:label_demandfactor)=
 # ```{admonition} What causes a shift in demand?
 # - Tastes and preferences
 # - Number of consumers

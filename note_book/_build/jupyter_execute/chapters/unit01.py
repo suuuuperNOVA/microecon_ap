@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 01: Basic Economic Concepts
+# # Basic Economic Concepts
 
 # ```{admonition} Microeconomics vs. Macroeconomics
 # :class: tip

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02.4: Price Elasticity of Supply
+# # Price Elasticity of Supply
 # 
 # Price elasticity of supply (PES)
 # : Measures how sensitive quantity supplied is to a change in price.
@@ -114,7 +114,7 @@ text2 = alt.Chart({'values':[{'x': 8, 'y': 7}]}).mark_text(
 
 fig4 = fig4 + text2
 
-(fig3 + fig4).properties(title='Supply Curves with Different PES') 
+(fig3 + fig4).properties(title='Supply Curves with Different PES')
 
 
 # ```{note}

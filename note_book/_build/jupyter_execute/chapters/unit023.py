@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02.3: Price Elasticity of Demand
+# # Price Elasticity of Demand
 # > Law of Demand states an inverse relationship between price (P) and quantity demanded (Q_D).<br>
 # > Elasticity is about determining how much more or how much less consumers will buy with the price change.<br><br>
 # > After this topic, we can explain why furniture stores have sales all the time but gas stations rarely have sales.
@@ -394,17 +394,17 @@ fig_ped + text4 + text5 + text6 + text7
 # **Necessity or luxury good**<br>
 # 
 # Necessity good
-# : Goods and services that consumers will buy regardless of the changes in their income levels, therefore making these products less sensitive to income change.
+# : Goods and services that consumers will buy regardless of the changes in their income levels, therefore making these products less sensitive to income change.<br>
 # : The price elasticity of demand tends to be low if a good is something you must have, like a life-saving medicine, or something you feel like you must have due to an addiction.
 # : e.g. medicine, milk, bread
 # 
 # Luxury good
-# : Goods and services for which demand increases more than what is proportional as income rises, so that expenditures on the good become a greater proportion of overall spending.
+# : Goods and services for which demand increases more than what is proportional as income rises, so that expenditures on the good become a greater proportion of overall spending.<br>
 # : The price elasticity of demand tends to be high if the good is a luxury, something you can easily live without.
 # : e.g. luxury car<br><br>
 # 
 # **Time**<br>
-# The price elasticity of demand tends to increase as consumers have more time to adjust to a price change. This means that the long-run price elasticity of demand is often higher than the short-run elasticity.
+# The price elasticity of demand tends to increase as consumers have more time to adjust to a price change. This means that the long-run price elasticity of demand is often lower than the short-run elasticity.
 # 
 
 # ## Elasticity and Total Revenue

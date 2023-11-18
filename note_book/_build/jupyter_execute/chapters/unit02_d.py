@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02: Supply and Demand
+# # Supply and Demand
 
 # ```{admonition} Background
 # :class: tip

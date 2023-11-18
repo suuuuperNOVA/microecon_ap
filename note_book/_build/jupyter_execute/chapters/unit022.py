@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02.2: Supply
+# # Supply
 
 # Supply
 # : The different quantities of a good that sellers are willing and able to sell or produce at different prices.<br><br>
@@ -133,10 +133,11 @@ text5 = alt.Chart({'values':[{'x': 9.2, 'y': 1.41}]}).mark_text(
 fig2+text1+text2+text3+text4+text5
 
 
-# - When the supply increases, the demand curve shifts outward or to the right.
-# - When the supply decreases, the demand curve shifts inward or to the left.
+# - When the supply increases, the supply curve shifts outward or to the right.
+# - When the supply decreases, the supply curve shifts inward or to the left.
 # 
 # 
+# (content:references:label_supplyfactor)=
 # ```{admonition} What causes a shift in supply?
 # - Prices/Availability of inputs (resources)
 # - Prices of related goods

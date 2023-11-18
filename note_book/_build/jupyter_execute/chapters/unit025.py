@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Unit 02.5 Other Elasticities
+# # Other Elasticities
 
 # Cross-price elasticity of demand
 # : Measure the effect of the change in one good’s price on the quantity demanded of the other good. It is equal to the percent change in the quantity demanded of one good divided by the percent change in the other good’s price.<br><br>
