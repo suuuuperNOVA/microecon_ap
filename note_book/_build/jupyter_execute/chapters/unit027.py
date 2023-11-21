@@ -409,11 +409,12 @@ fig_eq
 # > Now, we are going to learn the effects on the equilibrium price and equilibrium quantity with shifts in both the demand and supply.
 # 
 # Based on the table below, it can be inferred, for example:
-# - Demand to right + Supply to left
+# - Demand to right + Supply to left<br>As shown in the figure below
 #     - Equilibrium price increases
 #     - Equilibrium quantity depends
 #         - If the shift in supply is greater than that in demand, the shift in supply will dominate and the equilibrium quantity will decrease.
 #         - If the shift in demand is greater than that in supply, the shift in demand will dominate and the equilibrium quantity will increase.
+#         - If the shift in demand equals that in supply, the equilibrium quantity will not change.
 # 
 # |  |Direction|Equilibrium Price|Equilibrium Quantity| 
 # |---|---|---|---|
@@ -421,3 +422,250 @@ fig_eq
 # |Demand|Left|Decrease|Decrease|
 # |Supply|Right|Decrease|Increase|
 # |Supply|Left|Increase|Decrease|
+
+# In[6]:
+
+
+df_d = pd.DataFrame(data={'price': list(range(1, 11)),
+                          'qd': list(range(9,-1,-1)),
+                          'qd2': list(range(10,0,-1))
+                       })
+
+df_s = pd.DataFrame(data={'price': list(range(1, 11)),
+                        'qs': list(range(0,10)),
+                        'qs2': list(range(-3,7))
+                       })
+
+df_e = pd.DataFrame(data={'price': [5.5,7.5],
+                        'q': [4.5,3.5]
+                       })
+
+text1 = alt.Chart({'values':[{'x': 9.3, 'y': 0.8}]}).mark_text(
+    text='D0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text2 = alt.Chart({'values':[{'x': 10.3, 'y': 0.8}]}).mark_text(
+    text='D1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text3 = alt.Chart({'values':[{'x': 9.3, 'y': 10.2}]}).mark_text(
+    text='S0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text4 = alt.Chart({'values':[{'x': 6.3, 'y': 10.2}]}).mark_text(
+    text='S1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text5 = alt.Chart({'values':[{'x': 7.45, 'y': 3}]}).mark_text(
+    text='➟',
+    fontSize=30
+).encode(x='x:Q', y='y:Q')
+
+text6 = alt.Chart({'values':[{'x': 5.5, 'y': 8}]}).mark_text(
+    text='➟',
+    fontSize=40,
+    angle=180
+).encode(x='x:Q', y='y:Q')
+
+text7 = alt.Chart({'values':[{'x': 4.5, 'y': 4.8}]}).mark_text(
+    text='E0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text8 = alt.Chart({'values':[{'x': 3.5, 'y': 8.2}]}).mark_text(
+    text='E1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+fig_eq1 = alt.Chart(df_d).mark_line().encode(
+    alt.X('qd', title='Quantity', scale=alt.Scale(domain=[0,11])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line().encode(
+    alt.X('qs', title='Quantity', scale=alt.Scale(domain=[0,11])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_d).mark_line(clip=True, color='green').encode(
+    alt.X('qd2', title='Quantity', scale=alt.Scale(domain=[0,11])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line(clip=True, color='red').encode(
+    alt.X('qs2', title='Quantity', scale=alt.Scale(domain=[0,11])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_e).mark_point(size=90, color='black', fill='black').encode(
+    x='q',
+    y='price'
+) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+
+
+# In[7]:
+
+
+df_d = pd.DataFrame(data={'price': list(range(1, 11)),
+                          'qd': list(range(9,-1,-1)),
+                          'qd2': list(range(12,2,-1))
+                       })
+
+df_s = pd.DataFrame(data={'price': list(range(1, 11)),
+                        'qs': list(range(0,10)),
+                        'qs2': list(range(-1,9))
+                       })
+
+df_e = pd.DataFrame(data={'price': [5.5,7.5],
+                        'q': [4.5,5.5]
+                       })
+
+text1 = alt.Chart({'values':[{'x': 9.3, 'y': 0.8}]}).mark_text(
+    text='D0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text2 = alt.Chart({'values':[{'x': 12.3, 'y': 0.8}]}).mark_text(
+    text='D1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text3 = alt.Chart({'values':[{'x': 9.3, 'y': 10.2}]}).mark_text(
+    text='S0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text4 = alt.Chart({'values':[{'x': 8.3, 'y': 10.2}]}).mark_text(
+    text='S1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text5 = alt.Chart({'values':[{'x': 8.5, 'y': 3}]}).mark_text(
+    text='➟',
+    fontSize=40
+).encode(x='x:Q', y='y:Q')
+
+text6 = alt.Chart({'values':[{'x': 7.45, 'y': 9}]}).mark_text(
+    text='➟',
+    fontSize=30,
+    angle=180
+).encode(x='x:Q', y='y:Q')
+
+text7 = alt.Chart({'values':[{'x': 4.5, 'y': 4.8}]}).mark_text(
+    text='E0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text8 = alt.Chart({'values':[{'x': 5.5, 'y': 8.2}]}).mark_text(
+    text='E1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+fig_eq2 = alt.Chart(df_d).mark_line().encode(
+    alt.X('qd', title='Quantity', scale=alt.Scale(domain=[0,13])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line().encode(
+    alt.X('qs', title='Quantity', scale=alt.Scale(domain=[0,13])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_d).mark_line(clip=True, color='green').encode(
+    alt.X('qd2', title='Quantity', scale=alt.Scale(domain=[0,13])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line(clip=True, color='red').encode(
+    alt.X('qs2', title='Quantity', scale=alt.Scale(domain=[0,13])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_e).mark_point(size=90, color='black', fill='black').encode(
+    x='q',
+    y='price'
+) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+
+
+# In[8]:
+
+
+df_d = pd.DataFrame(data={'price': list(range(1, 11)),
+                          'qd': list(range(9,-1,-1)),
+                          'qd2': list(range(11,1,-1))
+                       })
+
+df_s = pd.DataFrame(data={'price': list(range(1, 11)),
+                        'qs': list(range(0,10)),
+                        'qs2': list(range(-2,8))
+                       })
+
+df_e = pd.DataFrame(data={'price': [5.5,7.5],
+                        'q': [4.5,4.5]
+                       })
+
+text1 = alt.Chart({'values':[{'x': 9.3, 'y': 0.8}]}).mark_text(
+    text='D0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text2 = alt.Chart({'values':[{'x': 11.3, 'y': 0.8}]}).mark_text(
+    text='D1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text3 = alt.Chart({'values':[{'x': 9.3, 'y': 10.2}]}).mark_text(
+    text='S0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text4 = alt.Chart({'values':[{'x': 7.3, 'y': 10.2}]}).mark_text(
+    text='S1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text5 = alt.Chart({'values':[{'x': 8, 'y': 3}]}).mark_text(
+    text='➟',
+    fontSize=40
+).encode(x='x:Q', y='y:Q')
+
+text6 = alt.Chart({'values':[{'x': 7, 'y': 9}]}).mark_text(
+    text='➟',
+    fontSize=40,
+    angle=180
+).encode(x='x:Q', y='y:Q')
+
+text7 = alt.Chart({'values':[{'x': 4.5, 'y': 4.8}]}).mark_text(
+    text='E0',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+text8 = alt.Chart({'values':[{'x': 4.5, 'y': 8.2}]}).mark_text(
+    text='E1',
+    fontSize=15
+).encode(x='x:Q', y='y:Q')
+
+fig_eq3 = alt.Chart(df_d).mark_line().encode(
+    alt.X('qd', title='Quantity', scale=alt.Scale(domain=[0,12])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line().encode(
+    alt.X('qs', title='Quantity', scale=alt.Scale(domain=[0,12])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_d).mark_line(clip=True, color='green').encode(
+    alt.X('qd2', title='Quantity', scale=alt.Scale(domain=[0,12])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11])),
+) + alt.Chart(df_s).mark_line(clip=True, color='red').encode(
+    alt.X('qs2', title='Quantity', scale=alt.Scale(domain=[0,12])),
+    alt.Y('price', title='Price', scale=alt.Scale(domain=[0,11]))
+) + alt.Chart(df_e).mark_point(size=90, color='black', fill='black').encode(
+    x='q',
+    y='price'
+) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+
+
+# In[9]:
+
+
+alt.hconcat(fig_eq1, fig_eq2)
+
+
+# In[10]:
+
+
+fig_eq3
+
+
+# ```{Note}
+# When you are given the shifts in the demand and supply, you should be able to:
+# - Draw the diagram to show the changes;
+# - Know the movements of the market equilibrium; 
+# - Know whether price or quantity is not determined.
+# ```

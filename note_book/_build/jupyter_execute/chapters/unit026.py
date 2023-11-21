@@ -11,7 +11,7 @@
 # : A state where the supply of good matches demand.
 # : The intersection point E is the market equilibrium in the figure below<br><br>
 # 
-# Equilibrium price
+# Equilibrium quantity
 # : The quantity of the good bought and sold in equilibrium.
 # : <math xmlns="http://www.w3.org/1998/Math/MathML">
 #   <msub>
