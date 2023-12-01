@@ -295,7 +295,7 @@ fig_eq = alt.Chart(df_d).mark_line().encode(
     y='price'
 ) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8 + text9
 
-fig_eq
+fig_eq.properties(title='Shifts in the Demand')
 
 
 # ## Shifting Supply
@@ -401,7 +401,7 @@ fig_eq = alt.Chart(df_d).mark_line().encode(
     y='price'
 ) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8 + text9
 
-fig_eq
+fig_eq.properties(title='Shifts in the Supply')
 
 
 # ## Shifting Both Demand and Supply
@@ -497,6 +497,7 @@ fig_eq1 = alt.Chart(df_d).mark_line().encode(
     x='q',
     y='price'
 ) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+fig_eq1 = fig_eq1.properties(title='Shift in the Supply Dominates')
 
 
 # In[7]:
@@ -573,6 +574,7 @@ fig_eq2 = alt.Chart(df_d).mark_line().encode(
     x='q',
     y='price'
 ) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+fig_eq2 = fig_eq2.properties(title='Shift in Demand Dominates')
 
 
 # In[8]:
@@ -649,6 +651,7 @@ fig_eq3 = alt.Chart(df_d).mark_line().encode(
     x='q',
     y='price'
 ) + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8
+fig_eq3 = fig_eq3.properties(title='Shifts in the Supply and Demand are Equal')
 
 
 # In[9]:

@@ -14,3 +14,10 @@ chapters:
   - file: chapters/unit025
   - file: chapters/unit026
   - file: chapters/unit027
+  - file: chapters/unit028
+  - file: chapters/unit029
+- file: chapters/unit03
+  sections:
+  - file: chapters/unit031
+  - file: chapters/unit032
+  - file: chapters/unit033
