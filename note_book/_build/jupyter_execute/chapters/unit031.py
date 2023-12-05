@@ -48,7 +48,6 @@
 #     <mtext>Units of Inputs</mtext>
 #   </mfrac>
 # </math>
-# <br>
 # 
 # Marginal cost/MC
 # : Additional cost incurred by an additional output.
