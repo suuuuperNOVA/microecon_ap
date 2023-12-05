@@ -4,6 +4,8 @@
 # # Production, Cost, and the Perfect, Competition Model
 
 # ```{admonition} Background
+# :class: tip
+# 
 # In this chapter, the costs involved in production and how firms maximize profit are the key issues addressed. In economics, we assume that firms attempt to maximize profit.
 # 
 # <math xmlns="http://www.w3.org/1998/Math/MathML">

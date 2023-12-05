@@ -309,6 +309,33 @@
   <a class="reference internal nav-link" href="#quantity-control">
    Quantity Control
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inefficient-allocation-with-quantity-control">
+     Inefficient Allocation with Quantity Control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taxation">
+   Taxation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsidy">
+   Subsidy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deadweight-loss">
+   Deadweight Loss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tax-incidence">
+   Tax Incidence
+  </a>
  </li>
 </ul>
 
@@ -356,12 +383,12 @@ When a government intervenes to regulate quantity, we say that it imposes quanti
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f374c9e8446742a2879eea92104e07c9"></div>
+<div id="altair-viz-104d7d016de14509ba1f82252fab0614"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f374c9e8446742a2879eea92104e07c9") {
-      outputDiv = document.getElementById("altair-viz-f374c9e8446742a2879eea92104e07c9");
+    if (outputDiv.id !== "altair-viz-104d7d016de14509ba1f82252fab0614") {
+      outputDiv = document.getElementById("altair-viz-104d7d016de14509ba1f82252fab0614");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -437,91 +464,15 @@ People expend money, effort, and time to cope with the shortages caused by the p
 <p class="admonition-title">Tip</p>
 <p>The price floor will always be higher than the original equilibrium price. Otherwise, it will be meaningless as the market will always reach the equilibrium without touching the price floor.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
-                        <span class="s1">&#39;qd&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-                       <span class="p">})</span>
-
-<span class="n">df_s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
-                        <span class="s1">&#39;qs&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-                       <span class="p">})</span>
-
-<span class="n">df_e</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-                        <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-                       <span class="p">})</span>
-
-<span class="n">fig_eq</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_d</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;qd&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Quantity&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">])),</span>
-<span class="p">)</span> <span class="o">+</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_s</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;qs&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Quantity&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">])),</span>
-<span class="p">)</span> <span class="o">+</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_e</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;q&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;price&#39;</span>
-<span class="p">)</span>
-
-<span class="n">text1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">text2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">9.5</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">text3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;E&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">text4</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">text5</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">text6</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">&#39;values&#39;</span><span class="p">:[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mf">8.7</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">8.3</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Price Floor&#39;</span><span class="p">,</span>
-    <span class="n">fontSize</span><span class="o">=</span><span class="mi">15</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span><span class="p">)</span>
-
-<span class="n">df_h2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
-<span class="n">fig_h2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_h2</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">df_v2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
-<span class="n">fig_v2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_v2</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">df_v3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
-<span class="n">fig_v3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_v3</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">),</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="p">(</span><span class="n">fig_eq</span> <span class="o">+</span> <span class="n">text1</span> <span class="o">+</span> <span class="n">text2</span> <span class="o">+</span> <span class="n">text3</span> <span class="o">+</span> <span class="n">text4</span> <span class="o">+</span> <span class="n">text5</span> <span class="o">+</span> <span class="n">text6</span> <span class="o">+</span> <span class="n">fig_h2</span> <span class="o">+</span> <span class="n">fig_v2</span> <span class="o">+</span> <span class="n">fig_v3</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Price Floor&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4f97420d334f45cf9ce2bb91ec3b2cee"></div>
+<div id="altair-viz-2e5eff62575e46c3bd6ae4e64583d546"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4f97420d334f45cf9ce2bb91ec3b2cee") {
-      outputDiv = document.getElementById("altair-viz-4f97420d334f45cf9ce2bb91ec3b2cee");
+    if (outputDiv.id !== "altair-viz-2e5eff62575e46c3bd6ae4e64583d546") {
+      outputDiv = document.getElementById("altair-viz-2e5eff62575e46c3bd6ae4e64583d546");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -583,9 +534,584 @@ Unwanted goods or services.</p></li>
 <dl class="simple myst">
 <dt>Quantity control/Quota</dt><dd><p>Upper limit on the quantity of some goof that can be bought or sold.<br><br></p>
 </dd>
-<dt>License</dt><dd><p>Give its owner the right to supply a good or service.</p>
+<dt>License</dt><dd><p>Give its owner the right to supply a good or service.<br><br></p>
 </dd>
 </dl>
+<blockquote>
+<div><p>Previously, the market was at the equilibrium (Point E) where the equilibrium price was 5.5 dollars. Then, the government imposes a quota on the products. Although suppliers are willing to produce 2 units at a price of 3 dollars (Point B), buyers are willing to pay 8 dollars (Point A). So, the producers will sell their products at 8 dollars. The price difference of Point A and Point B is known as the quota cost, and producers transfer the quota cost to buyers.</p>
+</div></blockquote>
+<dl class="simple myst">
+<dt>Wedge</dt><dd><p>Quantity control/Quota drives a wedge between the demand price and the supply price of a good. The price paid by buyers ends up being higher than that received by sellers.<br><br></p>
+</dd>
+<dt>Quota rent</dt><dd><p>The difference between the demand and supply price at the quota amount.</p>
+</dd>
+<dd><p>Market price of the license when the licenses are traded.</p>
+</dd>
+<dd><p>Opportunity cost of license-holder.</p>
+</dd>
+</dl>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-11d92087b59d4614951ec64bbc3b6611"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-11d92087b59d4614951ec64bbc3b6611") {
+      outputDiv = document.getElementById("altair-viz-11d92087b59d4614951ec64bbc3b6611");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-5d5d368265f5c396ad0679a954c9dc1d"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7e100178d0b30ff53f5f746e95732883"}, "mark": {"type": "text", "fontSize": 15, "text": "E"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f3909e06cc3d88f9bd7aecd4f27a0f9f"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-fd6d734382dfbdc16c28f495d4eeb0c4"}, "mark": {"type": "text", "fontSize": 15, "text": "B"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-216d1e5fcb02673249565b947b17b87f"}, "mark": {"type": "text", "fontSize": 15, "text": "Quota"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7949bf3eb0c9a3b2166f9ff6e8ee514c"}, "mark": {"type": "text", "angle": 270, "fontSize": 15, "text": "Wedge"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-0d4b318712cfc2af6b5fbe60c5e43b92"}, "mark": {"type": "line", "color": "black"}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-bff9bb307618da3a42de005cd5cbf56d"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-ce21956125fea2347f64e9be5cabff06"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Quota", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-5d5d368265f5c396ad0679a954c9dc1d": [{"price": 5.5, "q": 4.5}, {"price": 8.0, "q": 2.0}, {"price": 3.0, "q": 2.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-7e100178d0b30ff53f5f746e95732883": [{"x": 5, "y": 5.5}], "data-f3909e06cc3d88f9bd7aecd4f27a0f9f": [{"x": 2.3, "y": 8.2}], "data-fd6d734382dfbdc16c28f495d4eeb0c4": [{"x": 2.3, "y": 2.9}], "data-216d1e5fcb02673249565b947b17b87f": [{"x": 2.6, "y": 1}], "data-7949bf3eb0c9a3b2166f9ff6e8ee514c": [{"x": 1.7, "y": 5.5}], "data-0d4b318712cfc2af6b5fbe60c5e43b92": [{"price": 0, "q": 2}, {"price": 10, "q": 2}], "data-bff9bb307618da3a42de005cd5cbf56d": [{"price": 3, "q": 0}, {"price": 3, "q": 2}], "data-ce21956125fea2347f64e9be5cabff06": [{"price": 8, "q": 0}, {"price": 8, "q": 2}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<div class="section" id="inefficient-allocation-with-quantity-control">
+<h3>Inefficient Allocation with Quantity Control<a class="headerlink" href="#inefficient-allocation-with-quantity-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Missed opportunities</p></li>
+<li><p>Illegal activities</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="taxation">
+<h2>Taxation<a class="headerlink" href="#taxation" title="Permalink to this headline">¶</a></h2>
+<p>When the government impose a tax on producers, the supply curve will shift to the left from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will pay 7 dollars (at Point E1), but producers will only receive 4 dollars (at Point A). The difference between Point A and Point E1 is the tax return of the government.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-a6c9a6eea10d4a5bbe1ddd80b65859ca"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a6c9a6eea10d4a5bbe1ddd80b65859ca") {
+      outputDiv = document.getElementById("altair-viz-a6c9a6eea10d4a5bbe1ddd80b65859ca");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-60bd0e639321d1fa180b5123c359fd65"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-207ba2def67eaaed9f98d34fafd6f98b"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7e100178d0b30ff53f5f746e95732883"}, "mark": {"type": "text", "fontSize": 15, "text": "E0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-b743e5265ee2596198a7e0b2c9cdcc46"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-1b4f80b5cda16e57e14510fcddd8af4f"}, "mark": {"type": "text", "angle": 270, "fontSize": 15, "text": "Tax"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-b2d47c2ff062169ae4086e23ca1919c8"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-ed033a165078511afb5068cd1ec5b01b"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-8aae2042b3d319ba3ae725326e808df7"}, "mark": {"type": "text", "angle": 270, "fontSize": 15, "text": "Tax"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-e9101396af10574a5b934dfc61a317b7"}, "mark": {"type": "text", "angle": 180, "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-6c8986df24ba78e68296c9a59e58af94"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-9bfa837a0102e37f4aa430eba4063552"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Tax", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-60bd0e639321d1fa180b5123c359fd65": [{"price": 4, "qs": 0}, {"price": 5, "qs": 1}, {"price": 6, "qs": 2}, {"price": 7, "qs": 3}, {"price": 8, "qs": 4}, {"price": 9, "qs": 5}, {"price": 10, "qs": 6}, {"price": 11, "qs": 7}, {"price": 12, "qs": 8}, {"price": 13, "qs": 9}], "data-207ba2def67eaaed9f98d34fafd6f98b": [{"price": 5.5, "q": 4.5}, {"price": 7.0, "q": 3.0}, {"price": 4.0, "q": 3.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-7e100178d0b30ff53f5f746e95732883": [{"x": 5, "y": 5.5}], "data-b743e5265ee2596198a7e0b2c9cdcc46": [{"x": 3.5, "y": 7}], "data-1b4f80b5cda16e57e14510fcddd8af4f": [{"x": 5.7, "y": 8.2}], "data-b2d47c2ff062169ae4086e23ca1919c8": [{"x": 3.5, "y": 4}], "data-ed033a165078511afb5068cd1ec5b01b": [{"x": 7, "y": 10.5}], "data-8aae2042b3d319ba3ae725326e808df7": [{"x": 2.7, "y": 5.3}], "data-e9101396af10574a5b934dfc61a317b7": [{"x": 8, "y": 10}], "data-6c8986df24ba78e68296c9a59e58af94": [{"price": 7, "q": 6}, {"price": 10, "q": 6}], "data-9bfa837a0102e37f4aa430eba4063552": [{"price": 4, "q": 3}, {"price": 7, "q": 3}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+<div class="section" id="subsidy">
+<h2>Subsidy<a class="headerlink" href="#subsidy" title="Permalink to this headline">¶</a></h2>
+<p>When the government subsidize producers, the supply curve will shift the right from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will 4 dollars (at Point E1), but producers will only receive 7 dollars (at Point A). The difference between Point A and Point E1 is the subsidy from the government.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-760751aead6a4511b7e02ef45f68783b"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-760751aead6a4511b7e02ef45f68783b") {
+      outputDiv = document.getElementById("altair-viz-760751aead6a4511b7e02ef45f68783b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-2b28459574f0bf2767987e27d778ee00"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-7712649b1555fc6177b75a078b139d5e"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-525fc82b362a3cc6c6cb8c81f53a224e"}, "mark": {"type": "text", "fontSize": 15, "text": "E0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9413fdb5c0b6b553563df5c9d3dbec41"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-86477ca8539cab798f2440d508e015c4"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-5af785c5630ce8695ebd00571426f444"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-490669b63d4abbc57c7c06095d2f4780"}, "mark": {"type": "text", "angle": 270, "fontSize": 15, "text": "Subsidy"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d20b5365a36f2959ac596f644784813c"}, "mark": {"type": "text", "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-ba91cdf8cc6a84c093abdf3d21cfbbcf"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Subsidy", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-2b28459574f0bf2767987e27d778ee00": [{"price": -2, "qs": 0}, {"price": -1, "qs": 1}, {"price": 0, "qs": 2}, {"price": 1, "qs": 3}, {"price": 2, "qs": 4}, {"price": 3, "qs": 5}, {"price": 4, "qs": 6}, {"price": 5, "qs": 7}, {"price": 6, "qs": 8}, {"price": 7, "qs": 9}, {"price": 8, "qs": 10}], "data-7712649b1555fc6177b75a078b139d5e": [{"price": 5.5, "q": 4.5}, {"price": 4.0, "q": 6.0}, {"price": 7.0, "q": 6.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-525fc82b362a3cc6c6cb8c81f53a224e": [{"x": 4.5, "y": 6}], "data-9413fdb5c0b6b553563df5c9d3dbec41": [{"x": 6.5, "y": 4}], "data-86477ca8539cab798f2440d508e015c4": [{"x": 6, "y": 7.5}], "data-5af785c5630ce8695ebd00571426f444": [{"x": 9.6, "y": 7}], "data-490669b63d4abbc57c7c06095d2f4780": [{"x": 5.7, "y": 5.5}], "data-d20b5365a36f2959ac596f644784813c": [{"x": 8, "y": 7.5}], "data-ba91cdf8cc6a84c093abdf3d21cfbbcf": [{"price": 4, "q": 6}, {"price": 7, "q": 6}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+<div class="section" id="deadweight-loss">
+<h2>Deadweight Loss<a class="headerlink" href="#deadweight-loss" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt>Deadweight loss</dt><dd><p>Loss of total surplus when a market fails to reach a competitive equilibrium.</p>
+</dd>
+</dl>
+<p>Within the market equilibrium, there is no deadweight loss and the total surplus (consumer surplus + producer surplus) is maximized.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-96dd58b687a0494bb1e005f12151c202"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-96dd58b687a0494bb1e005f12151c202") {
+      outputDiv = document.getElementById("altair-viz-96dd58b687a0494bb1e005f12151c202");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-d399b823e5ed27652ccca1b73313cabb"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7e100178d0b30ff53f5f746e95732883"}, "mark": {"type": "text", "fontSize": 15, "text": "E"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-69798f96eb95f743177ddc215c0c7d3f"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-8d3f29c45f05094ed9e8a75ee292382f"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-fa89a883a0141b394cf39fc6bff7760f"}, "mark": {"type": "text", "fontSize": 15, "text": "CS"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-72dd04cc6a780fcff871e575388a44b2"}, "mark": {"type": "text", "fontSize": 15, "text": "PS"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}], "title": "Market Equilibrium", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-d399b823e5ed27652ccca1b73313cabb": [{"price": 5.5, "q": 4.5}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-7e100178d0b30ff53f5f746e95732883": [{"x": 5, "y": 5.5}], "data-69798f96eb95f743177ddc215c0c7d3f": [{"price": 5.5, "q": 0.0}, {"price": 5.5, "q": 4.5}], "data-8d3f29c45f05094ed9e8a75ee292382f": [{"price": 0.0, "q": 4.5}, {"price": 5.5, "q": 4.5}], "data-fa89a883a0141b394cf39fc6bff7760f": [{"x": 1, "y": 7}], "data-72dd04cc6a780fcff871e575388a44b2": [{"x": 1, "y": 4}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p><strong>Price Ceiling</strong><br></p>
+<img src="../pic/unit02_8_dead_ceil.png" alt="dead_ceil" width="500"/><p><strong>Price Floor</strong><br></p>
+<img src="../pic/unit02_8_dead_floor.png" alt="dead_floor" width="500"/><p><strong>Quota</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-07af08b5dcb04d659d124ab0b8ffc371"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-07af08b5dcb04d659d124ab0b8ffc371") {
+      outputDiv = document.getElementById("altair-viz-07af08b5dcb04d659d124ab0b8ffc371");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-5d5d368265f5c396ad0679a954c9dc1d"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7e100178d0b30ff53f5f746e95732883"}, "mark": {"type": "text", "fontSize": 15, "text": "E"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f3909e06cc3d88f9bd7aecd4f27a0f9f"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-fd6d734382dfbdc16c28f495d4eeb0c4"}, "mark": {"type": "text", "fontSize": 15, "text": "B"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-216d1e5fcb02673249565b947b17b87f"}, "mark": {"type": "text", "fontSize": 15, "text": "Quota"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-7949bf3eb0c9a3b2166f9ff6e8ee514c"}, "mark": {"type": "text", "angle": 270, "fontSize": 15, "text": "Wedge"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f890c37a92a92766230b7da707310000"}, "mark": {"type": "text", "fontSize": 15, "text": "DWL"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-0d4b318712cfc2af6b5fbe60c5e43b92"}, "mark": {"type": "line", "color": "black"}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-bff9bb307618da3a42de005cd5cbf56d"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-ce21956125fea2347f64e9be5cabff06"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Deadweight Loss of Quota", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-5d5d368265f5c396ad0679a954c9dc1d": [{"price": 5.5, "q": 4.5}, {"price": 8.0, "q": 2.0}, {"price": 3.0, "q": 2.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-7e100178d0b30ff53f5f746e95732883": [{"x": 5, "y": 5.5}], "data-f3909e06cc3d88f9bd7aecd4f27a0f9f": [{"x": 2.3, "y": 8.2}], "data-fd6d734382dfbdc16c28f495d4eeb0c4": [{"x": 2.3, "y": 2.9}], "data-216d1e5fcb02673249565b947b17b87f": [{"x": 2.6, "y": 1}], "data-7949bf3eb0c9a3b2166f9ff6e8ee514c": [{"x": 1.7, "y": 5.5}], "data-f890c37a92a92766230b7da707310000": [{"x": 3.1, "y": 5.5}], "data-0d4b318712cfc2af6b5fbe60c5e43b92": [{"price": 0, "q": 2}, {"price": 10, "q": 2}], "data-bff9bb307618da3a42de005cd5cbf56d": [{"price": 3, "q": 0}, {"price": 3, "q": 2}], "data-ce21956125fea2347f64e9be5cabff06": [{"price": 8, "q": 0}, {"price": 8, "q": 2}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p><strong>Taxation</strong></p>
+<ul class="simple">
+<li><p>Consumer surplus is the area under the demand curve but above the price buyers pay for.</p></li>
+<li><p>Producer surplus is the area above the supply curve but under the price producers receive.</p></li>
+<li><p>The government has the tax revenue which amounts to the area of the gray rectangle.<br>Q=15, Tax Rate = Price Diff=7-4, Area=15 x 3</p></li>
+<li><p>Tax is paid by both producers and consumers and the proportion is related to elasticity.</p></li>
+</ul>
+<img src="../pic/unit02_8_dead_tax.png" alt="dead_tax" width="600"/><p><strong>Subsidy</strong></p>
+<p>The figure below shows that the amount of money paid by the government for subsidies is the <strong>total area of V, W, X, Y and Z</strong>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-f36dbbe9265a4d429f966ab6da49ff25"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-f36dbbe9265a4d429f966ab6da49ff25") {
+      outputDiv = document.getElementById("altair-viz-f36dbbe9265a4d429f966ab6da49ff25");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-2b28459574f0bf2767987e27d778ee00"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-7712649b1555fc6177b75a078b139d5e"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9413fdb5c0b6b553563df5c9d3dbec41"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-86477ca8539cab798f2440d508e015c4"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-5af785c5630ce8695ebd00571426f444"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f018df68886a13577bf54ab376ee6bba"}, "mark": {"type": "text", "fontSize": 15, "text": "Z"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d20b5365a36f2959ac596f644784813c"}, "mark": {"type": "text", "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-a786e80c093e6d116d6f329b3772b8a4"}, "mark": {"type": "text", "fontSize": 15, "text": "V"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-cc5cbae1bd024a0fcbb84231bb60e3f7"}, "mark": {"type": "text", "fontSize": 15, "text": "W"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-54e64639a68334767d902c1746c00736"}, "mark": {"type": "text", "fontSize": 15, "text": "X"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f92d4b10b882677bf6c434ef1a97fafd"}, "mark": {"type": "text", "fontSize": 15, "text": "Y"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d938c55edd458a52bfdc76ab9c3fbb8f"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-9e03bcc08b1151134cdbe1d5cf3b7fcc"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-ba91cdf8cc6a84c093abdf3d21cfbbcf"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-69798f96eb95f743177ddc215c0c7d3f"}, "mark": {"type": "line", "color": "red", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Deadweight Loss of Subsidy (a)", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-2b28459574f0bf2767987e27d778ee00": [{"price": -2, "qs": 0}, {"price": -1, "qs": 1}, {"price": 0, "qs": 2}, {"price": 1, "qs": 3}, {"price": 2, "qs": 4}, {"price": 3, "qs": 5}, {"price": 4, "qs": 6}, {"price": 5, "qs": 7}, {"price": 6, "qs": 8}, {"price": 7, "qs": 9}, {"price": 8, "qs": 10}], "data-7712649b1555fc6177b75a078b139d5e": [{"price": 5.5, "q": 4.5}, {"price": 4.0, "q": 6.0}, {"price": 7.0, "q": 6.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-9413fdb5c0b6b553563df5c9d3dbec41": [{"x": 6.5, "y": 4}], "data-86477ca8539cab798f2440d508e015c4": [{"x": 6, "y": 7.5}], "data-5af785c5630ce8695ebd00571426f444": [{"x": 9.6, "y": 7}], "data-f018df68886a13577bf54ab376ee6bba": [{"x": 5.5, "y": 5.5}], "data-d20b5365a36f2959ac596f644784813c": [{"x": 8, "y": 7.5}], "data-a786e80c093e6d116d6f329b3772b8a4": [{"x": 2, "y": 6.2}], "data-cc5cbae1bd024a0fcbb84231bb60e3f7": [{"x": 4.5, "y": 6.2}], "data-54e64639a68334767d902c1746c00736": [{"x": 2, "y": 4.5}], "data-f92d4b10b882677bf6c434ef1a97fafd": [{"x": 4.5, "y": 4.5}], "data-d938c55edd458a52bfdc76ab9c3fbb8f": [{"price": 7, "q": 0}, {"price": 7, "q": 6}], "data-9e03bcc08b1151134cdbe1d5cf3b7fcc": [{"price": 4, "q": 0}, {"price": 4, "q": 6}], "data-ba91cdf8cc6a84c093abdf3d21cfbbcf": [{"price": 4, "q": 6}, {"price": 7, "q": 6}], "data-69798f96eb95f743177ddc215c0c7d3f": [{"price": 5.5, "q": 0.0}, {"price": 5.5, "q": 4.5}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>When the supply curve shifts to the right, the consumer surplus will be increased by <strong>the area of X and Y</strong>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-7db8f726359848c98523d34374b58eb0"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-7db8f726359848c98523d34374b58eb0") {
+      outputDiv = document.getElementById("altair-viz-7db8f726359848c98523d34374b58eb0");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-2b28459574f0bf2767987e27d778ee00"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-9e9d6cd9238f3f03b4cb09006f7eebf3"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9413fdb5c0b6b553563df5c9d3dbec41"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-5af785c5630ce8695ebd00571426f444"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d20b5365a36f2959ac596f644784813c"}, "mark": {"type": "text", "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-54e64639a68334767d902c1746c00736"}, "mark": {"type": "text", "fontSize": 15, "text": "X"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f92d4b10b882677bf6c434ef1a97fafd"}, "mark": {"type": "text", "fontSize": 15, "text": "Y"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9e03bcc08b1151134cdbe1d5cf3b7fcc"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-69798f96eb95f743177ddc215c0c7d3f"}, "mark": {"type": "line", "color": "red", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Deadweight Loss of Subsidy (b)", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-2b28459574f0bf2767987e27d778ee00": [{"price": -2, "qs": 0}, {"price": -1, "qs": 1}, {"price": 0, "qs": 2}, {"price": 1, "qs": 3}, {"price": 2, "qs": 4}, {"price": 3, "qs": 5}, {"price": 4, "qs": 6}, {"price": 5, "qs": 7}, {"price": 6, "qs": 8}, {"price": 7, "qs": 9}, {"price": 8, "qs": 10}], "data-9e9d6cd9238f3f03b4cb09006f7eebf3": [{"price": 5.5, "q": 4.5}, {"price": 4.0, "q": 6.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-9413fdb5c0b6b553563df5c9d3dbec41": [{"x": 6.5, "y": 4}], "data-5af785c5630ce8695ebd00571426f444": [{"x": 9.6, "y": 7}], "data-d20b5365a36f2959ac596f644784813c": [{"x": 8, "y": 7.5}], "data-54e64639a68334767d902c1746c00736": [{"x": 2, "y": 4.5}], "data-f92d4b10b882677bf6c434ef1a97fafd": [{"x": 4.5, "y": 4.5}], "data-9e03bcc08b1151134cdbe1d5cf3b7fcc": [{"price": 4, "q": 0}, {"price": 4, "q": 6}], "data-69798f96eb95f743177ddc215c0c7d3f": [{"price": 5.5, "q": 0.0}, {"price": 5.5, "q": 4.5}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>When the supply curve shifts to the right, the producer surplus will be increased by <strong>the area of V and W</strong>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-fafbcd7d85ce4e86806a43076e75fb0c"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-fafbcd7d85ce4e86806a43076e75fb0c") {
+      outputDiv = document.getElementById("altair-viz-fafbcd7d85ce4e86806a43076e75fb0c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-2b28459574f0bf2767987e27d778ee00"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-7712649b1555fc6177b75a078b139d5e"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9413fdb5c0b6b553563df5c9d3dbec41"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-86477ca8539cab798f2440d508e015c4"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-5af785c5630ce8695ebd00571426f444"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d20b5365a36f2959ac596f644784813c"}, "mark": {"type": "text", "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-a786e80c093e6d116d6f329b3772b8a4"}, "mark": {"type": "text", "fontSize": 15, "text": "V"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-cc5cbae1bd024a0fcbb84231bb60e3f7"}, "mark": {"type": "text", "fontSize": 15, "text": "W"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d938c55edd458a52bfdc76ab9c3fbb8f"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-69798f96eb95f743177ddc215c0c7d3f"}, "mark": {"type": "line", "color": "red", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Deadweight Loss of Subsidy (c)", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-2b28459574f0bf2767987e27d778ee00": [{"price": -2, "qs": 0}, {"price": -1, "qs": 1}, {"price": 0, "qs": 2}, {"price": 1, "qs": 3}, {"price": 2, "qs": 4}, {"price": 3, "qs": 5}, {"price": 4, "qs": 6}, {"price": 5, "qs": 7}, {"price": 6, "qs": 8}, {"price": 7, "qs": 9}, {"price": 8, "qs": 10}], "data-7712649b1555fc6177b75a078b139d5e": [{"price": 5.5, "q": 4.5}, {"price": 4.0, "q": 6.0}, {"price": 7.0, "q": 6.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-9413fdb5c0b6b553563df5c9d3dbec41": [{"x": 6.5, "y": 4}], "data-86477ca8539cab798f2440d508e015c4": [{"x": 6, "y": 7.5}], "data-5af785c5630ce8695ebd00571426f444": [{"x": 9.6, "y": 7}], "data-d20b5365a36f2959ac596f644784813c": [{"x": 8, "y": 7.5}], "data-a786e80c093e6d116d6f329b3772b8a4": [{"x": 2, "y": 6.2}], "data-cc5cbae1bd024a0fcbb84231bb60e3f7": [{"x": 4.5, "y": 6.2}], "data-d938c55edd458a52bfdc76ab9c3fbb8f": [{"price": 7, "q": 0}, {"price": 7, "q": 6}], "data-69798f96eb95f743177ddc215c0c7d3f": [{"price": 5.5, "q": 0.0}, {"price": 5.5, "q": 4.5}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>To summarize:</p>
+<ul class="simple">
+<li><p>Consumer surplus will be increased by the area of X and Y.</p></li>
+<li><p>Producer surplus will be increased by the area of V and W.</p></li>
+<li><p>Total surplus gain will be V + W + X + Y.</p></li>
+<li><p>Government pays V + W + X + Y + Z.</p></li>
+<li><p>The deadweight loss will be Z.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-5844f55cdf5e4d28bc7b41a4cf189784"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5844f55cdf5e4d28bc7b41a4cf189784") {
+      outputDiv = document.getElementById("altair-viz-5844f55cdf5e4d28bc7b41a4cf189784");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-b52e021a0734944d4e2e38e1163d0639"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qd", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-f4791e6d2c5433b743c328a8f6f72260"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-2b28459574f0bf2767987e27d778ee00"}, "mark": {"type": "line", "clip": true}, "encoding": {"x": {"type": "quantitative", "field": "qs", "scale": {"domain": [0, 10]}, "title": "Quantity"}, "y": {"type": "quantitative", "field": "price", "scale": {"domain": [0, 11]}, "title": "Price"}}}, {"data": {"name": "data-7712649b1555fc6177b75a078b139d5e"}, "mark": {"type": "point", "color": "black", "fill": "black", "size": 90}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}, {"data": {"name": "data-411b058143eb0c76546a59e0f2efbb64"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-78eb422e47dc010e08ec7870329a9a72"}, "mark": {"type": "text", "fontSize": 15, "text": "S0"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-9413fdb5c0b6b553563df5c9d3dbec41"}, "mark": {"type": "text", "fontSize": 15, "text": "E1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-86477ca8539cab798f2440d508e015c4"}, "mark": {"type": "text", "fontSize": 15, "text": "A"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-5af785c5630ce8695ebd00571426f444"}, "mark": {"type": "text", "fontSize": 15, "text": "S1"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-f018df68886a13577bf54ab376ee6bba"}, "mark": {"type": "text", "fontSize": 15, "text": "DWL"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-d20b5365a36f2959ac596f644784813c"}, "mark": {"type": "text", "fontSize": 40, "text": "\u279f"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-ba91cdf8cc6a84c093abdf3d21cfbbcf"}, "mark": {"type": "line", "color": "black", "strokeDash": [4, 2]}, "encoding": {"x": {"type": "quantitative", "field": "q"}, "y": {"type": "quantitative", "field": "price"}}}], "title": "Deadweight Loss of Subsidy (d)", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b52e021a0734944d4e2e38e1163d0639": [{"price": 1, "qd": 9}, {"price": 2, "qd": 8}, {"price": 3, "qd": 7}, {"price": 4, "qd": 6}, {"price": 5, "qd": 5}, {"price": 6, "qd": 4}, {"price": 7, "qd": 3}, {"price": 8, "qd": 2}, {"price": 9, "qd": 1}, {"price": 10, "qd": 0}], "data-f4791e6d2c5433b743c328a8f6f72260": [{"price": 1, "qs": 0}, {"price": 2, "qs": 1}, {"price": 3, "qs": 2}, {"price": 4, "qs": 3}, {"price": 5, "qs": 4}, {"price": 6, "qs": 5}, {"price": 7, "qs": 6}, {"price": 8, "qs": 7}, {"price": 9, "qs": 8}, {"price": 10, "qs": 9}], "data-2b28459574f0bf2767987e27d778ee00": [{"price": -2, "qs": 0}, {"price": -1, "qs": 1}, {"price": 0, "qs": 2}, {"price": 1, "qs": 3}, {"price": 2, "qs": 4}, {"price": 3, "qs": 5}, {"price": 4, "qs": 6}, {"price": 5, "qs": 7}, {"price": 6, "qs": 8}, {"price": 7, "qs": 9}, {"price": 8, "qs": 10}], "data-7712649b1555fc6177b75a078b139d5e": [{"price": 5.5, "q": 4.5}, {"price": 4.0, "q": 6.0}, {"price": 7.0, "q": 6.0}], "data-411b058143eb0c76546a59e0f2efbb64": [{"x": 9, "y": 1.5}], "data-78eb422e47dc010e08ec7870329a9a72": [{"x": 9, "y": 9.5}], "data-9413fdb5c0b6b553563df5c9d3dbec41": [{"x": 6.5, "y": 4}], "data-86477ca8539cab798f2440d508e015c4": [{"x": 6, "y": 7.5}], "data-5af785c5630ce8695ebd00571426f444": [{"x": 9.6, "y": 7}], "data-f018df68886a13577bf54ab376ee6bba": [{"x": 5.5, "y": 5.5}], "data-d20b5365a36f2959ac596f644784813c": [{"x": 8, "y": 7.5}], "data-ba91cdf8cc6a84c093abdf3d21cfbbcf": [{"price": 4, "q": 6}, {"price": 7, "q": 6}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+<div class="section" id="tax-incidence">
+<h2>Tax Incidence<a class="headerlink" href="#tax-incidence" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Consumers and producers are usually both partially responsible for paying the tax, but often one pays a greater percentage of the tax.<br><br>
+The tax incidence is directly related to the price elasticity of supply and demand:</p>
+<ul class="simple">
+<li><p>If supply is more elastic than demand, consumers pay more.</p></li>
+<li><p>If demand is more elastic than supply, producers pay more.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>A Tax Paid Mainly by Consumers</strong></p>
+<img src="../pic/unit02_8_tax_consumer.png" alt="tax_consumer" width="600"/><p><strong>A Tax Paid Mainly by Producers</strong></p>
+<img src="../pic/unit02_8_tax_producer.png" alt="tax_producer" width="600"/><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Elasticities</p></th>
+<th class="head"><p>Tax Incidence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Elasticity of Demand &gt; Elasticity of Supply</p></td>
+<td><p>Producers pay more</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elasticity of Supply &gt; Elasticity of Demand</p></td>
+<td><p>Consumers pay more</p></td>
+</tr>
+<tr class="row-even"><td><p>Perfectly inelastic demand</p></td>
+<td><p>Consumers pay all</p></td>
+</tr>
+<tr class="row-odd"><td><p>Perfectly elastic demand</p></td>
+<td><p>Consumers pay none of the tax</p></td>
+</tr>
+<tr class="row-even"><td><p>Perfectly inelastic supply</p></td>
+<td><p>Producers pay all</p></td>
+</tr>
+<tr class="row-odd"><td><p>Perfectly elastic supply</p></td>
+<td><p>Producers pay none of the tax</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
