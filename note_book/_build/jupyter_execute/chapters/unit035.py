@@ -36,7 +36,7 @@
 
 # The area under the MR curve is the total benefit a producer can get, and the area under the MC curve is the total cost. The net benefit is the difference of the area of 2 curves, which is maximized when MR = MC.
 
-# <img src="../pic/unit03_5_MR.png" alt="mrmc" width="600"/>
+# <img src="../pic/unit03_5_mr.png" alt="mrmc" width="600"/>
 
 # > This concept is very important. 15% of the exam questions require to use this rule.
 
