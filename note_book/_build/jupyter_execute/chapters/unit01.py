@@ -421,7 +421,7 @@ fig_alex + fig_alex_trade
 # - Each slice of pizza gives you less and less additional benefit (downward sloping MB).
 # - Each additional slice costs more and more since you miss more and more of the game (upward sloping MC).
 # ```
-# 
+# (content:references:label_mrmc)=
 # **Total net benefits are maximized when *MB = MC*.**
 
 # In[5]:

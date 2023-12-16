@@ -220,7 +220,7 @@ fig_v3 = alt.Chart(df_v3).mark_line(color='black', strokeDash=[4, 2]).encode(
 # ## Quantity Control
 # 
 # Quantity control/Quota
-# : Upper limit on the quantity of some goof that can be bought or sold.<br><br>
+# : Upper limit on the quantity of some good that can be bought or sold.<br><br>
 # 
 # License
 # : Give its owner the right to supply a good or service.<br><br>
@@ -324,7 +324,7 @@ fig_h3 = alt.Chart(df_h3).mark_line(color='black', strokeDash=[4, 2]).encode(
 
 # ## Taxation
 
-# When the government impose a tax on producers, the supply curve will shift to the left from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will pay 7 dollars (at Point E1), but producers will only receive 4 dollars (at Point A). The difference between Point A and Point E1 is the tax return of the government.
+# When the government imposes a tax on producers, the supply curve will shift to the left from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will pay 7 dollars (at Point E1), but producers will only receive 4 dollars (at Point A). The difference between Point A and Point E1 is the tax return of the government.
 
 # In[5]:
 
@@ -430,7 +430,7 @@ fig_v3 = alt.Chart(df_v3).mark_line(color='black', strokeDash=[4, 2]).encode(
 
 # ## Subsidy
 # 
-# When the government subsidize producers, the supply curve will shift the right from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will 4 dollars (at Point E1), but producers will only receive 7 dollars (at Point A). The difference between Point A and Point E1 is the subsidy from the government.
+# When the government subsidizes producers, the supply curve will shift the right from S0 to S1 and the market equilibrium will shift from E0 to E1. Buyers will 4 dollars (at Point E1), but producers will only receive 7 dollars (at Point A). The difference between Point A and Point E1 is the subsidy from the government.
 
 # In[6]:
 
