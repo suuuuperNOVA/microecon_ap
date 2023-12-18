@@ -23,3 +23,5 @@
 # - In a perfect competition market, firms have no barrier to entry or exit.
 # - When the firms can earn economic profits, they will enter.
 # - Profits will attract new competition and firms, while losses create incentives to leave the market.
+
+# In the short run, firms can have positive economic profit. Then, more firms will enter because of positive economic profit. Finally, in the **long run**, the economic profit will become 0 (**normal profit**) with more firms getting into the industry.
