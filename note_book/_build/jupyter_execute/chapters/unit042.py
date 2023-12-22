@@ -14,7 +14,7 @@
 # - Economies of scale
 # - Copyrights of patents
 
-# ## Demand Curve of Monoplist
+# ## Graphs of Monoplist
 
 # Within monopoly, there are 2 curves as shown in the figure below:
 # - Demand (D)
@@ -37,6 +37,7 @@
 # ## Is monopoly efficient?
 # 
 # - **Not** Allocatively efficient<br>The quantity produced is less than the market demanded.
+# 
 # - **Not** Productively efficient<br>Not produce at the minimum point on ATC.
 
 # ## Deadweight Loss of Monopoly
@@ -52,6 +53,19 @@
 # : Natural monopolies are allowed when a single company can supply a product or service at a lower cost than any potential competitor but are often heavily regulated to protect consumers.<br><br>
 # : e.g. Electricity company and public transport company.
 
-# Natural monopolists benefit from scales of economy, operating at a very low cost. So, there is no competitor. Usually, the government regulates such companies to make them produce at the point where ATC intersects the demand curve. It's acceptable for a lower cost to the public.
+# ```{note}
+# - Natural monopolists benefit from scales of economy, operating at a very low cost. So, there is no competitor. 
+# 
+# - Due to the significant cost savings of having one producer in these industries, governments allow some monopolies such as utility companies to operate.
+# 
+# - Due to the fear of high prices and poor quality, the government regulates natural monopolies with the goal of increasing efficiency and reducing deadweight loss.
+# ```
+
+# Socially optimal pricing
+# : The government regulators force the monopoly to have allocatively efficient pricing at P = MC.<br><br>
+# : Requires a large of subsidy from taxpayers because P > ATC.
+# 
+# Fair-Return pricing
+# : Let the monopoly break even and earn a normal profit at P = ATC.
 
 # <img src="../pic/unit04_2_nmono.png" alt="namono" width="600"/>
