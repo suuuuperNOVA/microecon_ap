@@ -325,13 +325,124 @@
 <p class="admonition-title">Perfect vs. Imperfect Competition</p>
 <ul class="simple">
 <li><p>Perfectly competitive firms are <strong>price takers</strong>, so the demand curve is constant and equal to MR.</p></li>
-<li><p>Imperfectly competitive firms are <strong>price makers</strong>, so they have downward sloping demand curves.</p>
+<li><p>Imperfectly competitive firms have downward sloping demand curves.</p>
 <ul>
-<li><p>MR is <strong>not</strong> equal to the demand;</p></li>
-<li><p>Firm must lower price to sell additional units.</p></li>
+<li><p>MR is <strong>not</strong> equal to the demand!!!</p></li>
+<li><p>Firms must lower price to sell additional units.</p></li>
 </ul>
 </li>
 </ul>
+</div>
+<blockquote>
+<div><p>The table below shows the demand and marginal revenue curves in an imperfectly competitive market.</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P($)</p></th>
+<th class="head"><p>Qd</p></th>
+<th class="head"><p>TR($)</p></th>
+<th class="head"><p>MR($)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>-3</p></td>
+</tr>
+</tbody>
+</table>
+<p>In an imperfectly competitive market,</p>
+<ul class="simple">
+<li><p>Firms must lower price to sell additional units, so MR is below D.</p></li>
+<li><p>PED of points along the demand curve are different</p>
+<ul>
+<li><p>Point of MR = 0 is unit elastic;</p></li>
+<li><p>Points above unit elasticity are more elastic;</p></li>
+<li><p>Points below unit elasticity are more inelastic.</p></li>
+</ul>
+</li>
+<li><p>Firms only produce at elastic points because the total revenue reduces.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-97031d49f3854683b05a59701b48b845"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-97031d49f3854683b05a59701b48b845") {
+      outputDiv = document.getElementById("altair-viz-97031d49f3854683b05a59701b48b845");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"layer": [{"mark": {"type": "line", "point": {"fill": "white", "filled": false}}, "encoding": {"x": {"type": "quantitative", "axis": {"offset": -120, "tickMinStep": 1}, "field": "q", "scale": {"domain": [0, 6]}, "title": "Q"}, "y": {"type": "quantitative", "field": "p", "scale": {"domain": [0, 6]}, "title": "P"}}, "title": "Demand and Marginal Revenue of Imperfect Competition"}, {"mark": {"type": "line", "color": "green", "point": {"color": "green", "fill": "white", "filled": false}}, "encoding": {"x": {"type": "quantitative", "field": "q", "scale": {"domain": [0, 6]}, "title": "Q"}, "y": {"type": "quantitative", "field": "mr", "scale": {"domain": [-4, 6]}, "title": "P"}}}, {"data": {"name": "data-36693165c6c001bd2b6641bb09eda8b0"}, "mark": {"type": "text", "fontSize": 15, "text": "D"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"data": {"name": "data-2b442a3836f11a3e6e943fec2282a8c9"}, "mark": {"type": "text", "fontSize": 15, "text": "MR"}, "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}]}, {"mark": {"type": "line", "point": {"fill": "white", "filled": false}}, "encoding": {"x": {"type": "quantitative", "axis": {"tickMinStep": 1}, "field": "q", "scale": {"domain": [0, 6]}, "title": "Q"}, "y": {"type": "quantitative", "field": "tr", "scale": {"domain": [5, 9]}, "title": "Total Revenue"}}, "title": "Total Revenue of Imperfect Competition"}], "data": {"name": "data-9d03c3b9acb15db1b0e52cd556311d70"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-9d03c3b9acb15db1b0e52cd556311d70": [{"p": 5, "q": 1, "mr": 5, "tr": 5}, {"p": 4, "q": 2, "mr": 3, "tr": 8}, {"p": 3, "q": 3, "mr": 1, "tr": 9}, {"p": 2, "q": 4, "mr": -1, "tr": 8}, {"p": 1, "q": 5, "mr": -3, "tr": 5}], "data-36693165c6c001bd2b6641bb09eda8b0": [{"x": 5.2, "y": 1}], "data-2b442a3836f11a3e6e943fec2282a8c9": [{"x": 5.3, "y": -3}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </div>
 

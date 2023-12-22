@@ -8,7 +8,7 @@
 
 # <img src="../pic/unit04_impc.png" alt="impc" width="600"/>
 
-# An imperfectly competitive market exists because of high barriers to keep other firms from entering. 
+# An imperfectly competitive market exists because of high **barriers** to keep other firms from entering. Incentives to enter an industry may be mitigated by **barriers** to entry.
 
 # Types of barriers to entry:
 # - High fixed/start-up costs
