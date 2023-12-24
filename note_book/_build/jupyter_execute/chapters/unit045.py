@@ -44,12 +44,12 @@
 # : Best choice for a player regardless of what the other players chooses.
 
 # **Example**<br>
-# Firm A and Firm B have 2 pricing options whether to set a high price or a low price. If both A and set a high price, A will make \\$100 and B will make \\$50.
+# Firm A and Firm B have 2 pricing options whether to set a high price or a low price. If both A and set a high price, A will make \$100 and B will make \$50.
 # 
 # |   |B|High|Low|
 # |:---|:---|:---|:---|
-# |**A**|**High**|A = \\$100<br>B = \\$50|A = \\$60<br>B = \\$90|
-# ||**Lows**|A = \\$50<br>B = \\$40|A = \\$20<br>B = \\$10|
+# |**A**|**High**|A = \$100<br>B = \$50|A = \$60<br>B = \$90|
+# ||**Lows**|A = \$50<br>B = \$40|A = \$20<br>B = \$10|
 
 # - Based on the matrix above, A has a dominant strategy, pricing at a **high** price because A would always have greater profits regardless of B's choice.
 # - But B doesn't have a dominant strategy.
