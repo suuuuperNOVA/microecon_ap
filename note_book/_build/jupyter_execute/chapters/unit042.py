@@ -36,8 +36,7 @@
 
 # ## Is monopoly efficient?
 # 
-# - **Not** Allocatively efficient<br>The quantity produced is less than the market demanded.
-# 
+# - **Not** Allocatively efficient<br>The quantity produced is less than the market demanded.<br><br>
 # - **Not** Productively efficient<br>Not produce at the minimum point on ATC.
 
 # ## Deadweight Loss of Monopoly

@@ -23,7 +23,7 @@
 # Perfect competition qualities
 # - Large number of smaller firms;
 # - Relatively easy entry and exit;
-# - Normal profit in the long run;
+# - Normal profit in the long run.
 # ```
 
 # ## Graphs of Monopolistic Competition

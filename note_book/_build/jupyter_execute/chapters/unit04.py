@@ -15,3 +15,7 @@
 # - Geography
 # - Ownership of raw materials
 # - Legal barriers.
+
+# ## Summary of Market Structures
+
+# <img src="../pic/unit04_summ.png" alt="summ" width="600"/>
