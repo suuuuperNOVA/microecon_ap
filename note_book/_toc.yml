@@ -32,3 +32,9 @@ chapters:
   - file: chapters/unit043
   - file: chapters/unit044
   - file: chapters/unit045
+- file: chapters/unit05
+  sections:
+  - file: chapters/unit051
+  - file: chapters/unit052
+  - file: chapters/unit053
+  - file: chapters/unit054

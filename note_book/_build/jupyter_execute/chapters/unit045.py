@@ -49,7 +49,7 @@
 # |   |B|High|Low|
 # |:---|:---|:---|:---|
 # |**A**|**High**|A = \$100<br>B = \$50|A = \$60<br>B = \$90|
-# ||**Lows**|A = \$50<br>B = \$40|A = \$20<br>B = \$10|
+# ||**Low**|A = \$50<br>B = \$40|A = \$20<br>B = \$10|
 
 # - Based on the matrix above, A has a dominant strategy, pricing at a **high** price because A would always have greater profits regardless of B's choice.
 # - But B doesn't have a dominant strategy.

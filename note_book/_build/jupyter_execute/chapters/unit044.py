@@ -44,7 +44,7 @@
 
 # ### In the Long Run
 
-# In the long run, there is no economic profit and firms produces at the point where ATC is **tengent** with D before its minimum point.
+# In the long run, there is no economic profit and firms produces at the point where ATC is **tangent** with D before its minimum point.
 
 # <img src="../pic/unit04_4_lr.png" alt="lr" width="600"/>
 
@@ -61,9 +61,3 @@
 # Excess capacity
 # : Gap between minimum ATC output and the profit maximizing output.<br><br>
 # : Given current resources, the firm can produce at the lowest costs (minimum ATC) but they decide not to.
-
-# In[ ]:
-
-
-
-
