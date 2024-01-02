@@ -23,7 +23,7 @@
 # Monopsony
 # : Occurs when there is a single buyer of labor.
 # : Monopoly of the factor market.
-# : Similar to monopolies, monopsonies underhires and pays workers less than in a competitive market.
+# : Similar to monopolies, a monopsony underhires and pays workers less than in a competitive market.
 # ```
 
 # Marginal product/MP

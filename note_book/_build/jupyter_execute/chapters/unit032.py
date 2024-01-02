@@ -75,6 +75,7 @@
 # <img src="../pic/unit03_2_costs.png" alt="costs" width="600"/>
 # ```
 
+# (content:references:label_tax)=
 # ## Taxes and Shifting Cost Curves
 
 # There are 2 types of taxes:

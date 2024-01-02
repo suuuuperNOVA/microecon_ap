@@ -18,7 +18,7 @@
 #     <mi>Q</mi>
 #     <mi>M</mi>
 #   </msub>
-# </math> where MFC = MRP, but bite the wage paid, <math xmlns="http://www.w3.org/1998/Math/MathML">
+# </math> where MFC = MRP, but note the wage paid is <math xmlns="http://www.w3.org/1998/Math/MathML">
 #   <msub>
 #     <mi>W</mi>
 #     <mi>M</mi>
