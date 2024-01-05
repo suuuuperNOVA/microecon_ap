@@ -220,8 +220,7 @@ fig_mu_1
 
 # ### Free-Rider Problem
 # 
-# ```{admonition}
-# 
+# ```{note} 
 # As public goods are non-exclusive, people know they can benefit from public good without paying for them. If consumers are free riders, demand drops to 0 for the product. Due to the free-rider problem, private firms will not supply public goods. If society wants a public good to be produced, it will have to direct government to do it.
 # ```
 
@@ -259,19 +258,19 @@ fig_mu_1
 
 # ## Inequality
 
-# > Income levels and poverty rates vary greatly both across and within groups (e.g., age, gender, race) and countries.
+# > Income levels and poverty rates vary greatly both across and within groups (e.g. age, gender, race) and countries.
 
 # ### Lorenze Curve
 
 # We use the **Lorenze curve** to measure the income inequality as shown in the figure below.
 # 
 # Lorenze curve consists of:
-# - % of income on the vertical axis
-# - % of family on the horizontal axis
+# - \% of income on the vertical axis
+# - \% of family on the horizontal axis
 # - Diagonal<br>Noted as the perfect equality case.
-#     - At the Point B, 50% of the families make 50% of total income in a country.
+#     - At the Point B, 50\% of the families make 50\% of total income in a country.
 # - Lorenz curve<br>Real case
-#     - At the Point A, 50% of families make 25 of total income in a country.
+#     - At the Point A, 50\% of families make 25\% of total income in a country.
 # 
 # When the Lorenze curve is more apart from the perfect equality line, there is more income inequality. So, the right case below is more unequal than the left case.
 
