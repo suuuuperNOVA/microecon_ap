@@ -105,17 +105,17 @@ fig2 = alt.Chart(df_supply_fig).mark_line(point=alt.OverlayMarkDef(filled=False,
 ).properties(title='Supply Curve of Cotton')
 
 text1 = alt.Chart({'values':[{'x': 11.8, 'y': 2.12}]}).mark_text(
-    text='D1',
+    text='S1',
     fontSize=15
 ).encode(x='x:Q', y='y:Q')
 
 text2 = alt.Chart({'values':[{'x': 14.8, 'y': 2.12}]}).mark_text(
-    text='D2',
+    text='S2',
     fontSize=15
 ).encode(x='x:Q', y='y:Q')
 
 text3 = alt.Chart({'values':[{'x': 8.8, 'y': 2.12}]}).mark_text(
-    text='D3',
+    text='S3',
     fontSize=15
 ).encode(x='x:Q', y='y:Q')
 
